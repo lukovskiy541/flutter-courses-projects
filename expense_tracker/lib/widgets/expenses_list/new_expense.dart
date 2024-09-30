@@ -44,15 +44,15 @@ class _NewExpenseState extends State<NewExpense> {
       showDialog(
           context: context,
           builder: (ctx) => AlertDialog(
-                title: Text('Invalid input'),
-                content: Text(
+                title: const Text('Invalid input'),
+                content: const Text(
                     "Please make sure a valid title, amountm date and categpory was entered."),
                 actions: [
                   TextButton(
                       onPressed: () {
                         Navigator.pop(ctx);
                       },
-                      child: Text('Okay'))
+                      child: const Text('Okay'))
                 ],
               ));
       return;
@@ -87,8 +87,8 @@ class _NewExpenseState extends State<NewExpense> {
                 TextField(
                   controller: _titleController,
                   maxLength: 50,
-                  decoration: InputDecoration(
-                    label: const Text('Title'),
+                  decoration: const InputDecoration(
+                    label: Text('Title'),
                   ),
                 ),
                 Row(
@@ -98,8 +98,8 @@ class _NewExpenseState extends State<NewExpense> {
                         controller: _amountController,
                         maxLength: 50,
                         keyboardType: TextInputType.number,
-                        decoration: InputDecoration(
-                          label: const Text('Amount'),
+                        decoration: const InputDecoration(
+                          label: Text('Amount'),
                           prefixText: '\$ ',
                         ),
                       ),
@@ -114,13 +114,13 @@ class _NewExpenseState extends State<NewExpense> {
                               : formatter.format(_selectedDate!)),
                           IconButton(
                               onPressed: _presentDatePicker,
-                              icon: Icon(Icons.calendar_month))
+                              icon: const Icon(Icons.calendar_month))
                         ],
                       ),
                     )
                   ],
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 16,
                 ),
                 Row(
@@ -145,18 +145,18 @@ class _NewExpenseState extends State<NewExpense> {
                             _selectedCategory = value;
                           });
                         }),
-                    Spacer(),
+                    const Spacer(),
                     TextButton(
                       onPressed: () {
                         Navigator.pop(context);
                       },
-                      child: Text('Cancel'),
+                      child: const Text('Cancel'),
                     ),
                     ElevatedButton(
                       onPressed: () {
                         _submitExpenseData();
                       },
-                      child: Text('Submit'),
+                      child: const Text('Submit'),
                     ),
                   ],
                 )

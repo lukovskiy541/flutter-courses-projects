@@ -15,17 +15,17 @@ class ExpensesItem extends StatelessWidget {
         child: Column(
           children: [
             Text(expense.title),
-            SizedBox(height: 4,),
+            const SizedBox(height: 4,),
             Row(
               children: [
                 Text('\$${expense.amount.toStringAsFixed(2)}'),
-                Spacer(),
+                const Spacer(),
                 Row(
                   children: [
                     Icon(categoryItems[expense.category],   color: isDarkMode
                   ? Theme.of(context).colorScheme.secondary
                   : Theme.of(context).colorScheme.primary.withOpacity(0.65),),
-                    SizedBox(width: 8,),
+                    const SizedBox(width: 8,),
                     Text(expense.formattedDate),
                   ],
                 )
