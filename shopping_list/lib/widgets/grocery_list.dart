@@ -110,11 +110,7 @@ class _GroceryListState extends ConsumerState<GroceryList> {
       child: Text('No items added yet.'),
     );
 
-    if (_isLoading) {
-      content = const Center(
-        child: CircularProgressIndicator(),
-      );
-    }
+   
 
     if (_groceryItems.isNotEmpty) {
       content = ListView.builder(

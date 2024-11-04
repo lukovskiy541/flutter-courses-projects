@@ -24,6 +24,10 @@ class ListsNotifier extends Notifier<List<ListInstance>> {
     state = updatedList;
   }
 
+  void addlist(ListInstance item) {
+    state = [...state, item];
+  }
+
   void removeProduct(GroceryItem item, String listName) {
     final updatedList = [...state];
     final listIndex = updatedList.indexWhere((list) => list.name == listName);
