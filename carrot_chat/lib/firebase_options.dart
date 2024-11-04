@@ -50,7 +50,7 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyCSOMV05Pq6stmfnQO8KiwgBw4gWFj3iPE',
+    apiKey: '',
     appId: '1:381272387325:web:4e8e5fa0d749e4944d9894',
     messagingSenderId: '381272387325',
     projectId: 'carrot-chat-app',
