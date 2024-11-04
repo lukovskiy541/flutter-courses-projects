@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:shopping_list/widgets/grocery_list.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:shopping_list/widgets/choose_list.dart';
+
 
 
 void main() {
-  runApp(const MyApp());
+  runApp(const ProviderScope(child: MyApp()));
 }
 
 class MyApp extends StatelessWidget {
@@ -26,7 +28,7 @@ class MyApp extends StatelessWidget {
           ),
           useMaterial3: true,
           scaffoldBackgroundColor: const Color.fromARGB(255, 50, 58, 60)),
-      home: const GroceryList(),
+      home: const Lists(),
     );
   }
 }
