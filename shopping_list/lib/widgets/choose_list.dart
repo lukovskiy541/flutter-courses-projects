@@ -14,6 +14,12 @@ class Lists extends ConsumerStatefulWidget {
 
 class _ListsState extends ConsumerState<Lists> {
 
+  @override
+  void initState() {
+    super.initState();
+
+  }
+
   void _addList() async {
     final newItem = await Navigator.of(context).push<ListInstance>(
         MaterialPageRoute(builder: (ctx) => const NewList()));

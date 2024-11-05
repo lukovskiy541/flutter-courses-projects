@@ -1,8 +1,19 @@
-import 'package:shopping_list/models/grocery_item.dart';
+import 'package:hive/hive.dart';
+import './grocery_item.dart';
 
-class ListInstance {
-  ListInstance({ required this.name,required this.items});
+part 'list_instance.g.dart';
 
-  List<GroceryItem> items = [];
+@HiveType(typeId: 0)
+class ListInstance extends HiveObject{
+  ListInstance({
+    required this.name,
+    required this.items,
+  });
+
+  @HiveField(0)
   final String name;
+
+  @HiveField(1)
+  final List<GroceryItem> items;
+
 }

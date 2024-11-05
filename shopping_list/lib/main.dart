@@ -1,11 +1,25 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:hive/hive.dart';
+import 'package:hive_flutter/hive_flutter.dart';
+import 'package:shopping_list/models/category.dart';
+import 'package:shopping_list/models/color.dart';
+import 'package:shopping_list/models/grocery_item.dart';
+import 'package:shopping_list/models/list_instance.dart';
 import 'package:shopping_list/widgets/choose_list.dart';
 
 
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Hive.initFlutter();
+  Hive.registerAdapter(ColorAdapter());
+  Hive.registerAdapter(ListInstanceAdapter());
+  Hive.registerAdapter(GroceryItemAdapter());
+  await Hive.openBox<Category>('Categories');
+  Hive.registerAdapter(CategoryAdapter());
   runApp(const ProviderScope(child: MyApp()));
+
 }
 
 class MyApp extends StatelessWidget {
